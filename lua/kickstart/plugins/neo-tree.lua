@@ -12,12 +12,25 @@ return {
   lazy = false,
   keys = {
     { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { ';', ':Neotree focus<CR>', desc = 'NeoTree focus', silent = true },
   },
   opts = {
     filesystem = {
       window = {
         mappings = {
           ['\\'] = 'close_window',
+        },
+      },
+      filtered_items = {
+        visible = true,
+        hide_dotfiles = true,
+        hide_gitignore = true,
+        never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
+          '.DS_Store',
+          '.git',
+        },
+        hide_by_name = {
+          'LICENCE.md',
         },
       },
     },
