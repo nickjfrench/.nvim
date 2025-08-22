@@ -85,6 +85,7 @@ return {
             ['pwa-node'] = js_based_languages,
             ['chrome'] = js_based_languages,
             ['pwa-chrome'] = js_based_languages,
+            ['node-terminal'] = js_based_languages,
           })
         end
         require('dap').continue()
@@ -212,6 +213,7 @@ return {
         },
       }
     end
+
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|
     dapui.setup {
