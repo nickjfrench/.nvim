@@ -806,12 +806,20 @@ require('lazy').setup({
           }
         end
       end,
+      formatters = {
+        eslint = {
+          command = 'npx',
+          args = { 'eslint', '--fix', '$FILENAME' },
+          stdin = false,
+        },
+      },
       formatters_by_ft = {
         lua = { 'stylua' },
         python = { 'ruff' },
         go = { 'gofmt' },
-        javascript = { 'prettierd' },
-        typescript = { 'prettierd' },
+        vue = { 'eslint', 'prettier', stop_after_first = true },
+        javascript = { 'eslint', 'prettier', stop_after_first = true },
+        typescript = { 'eslint', 'prettier', stop_after_first = true },
       },
     },
   },
